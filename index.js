@@ -4,8 +4,8 @@ const got = require('got');
 const sendPath = async path => {
   try {
     await got.post({
-      url: 'http://localhost:1981',
-      body: { path: `/${path}` },
+      url: 'http://plex.n8io.com:1981',
+      body: { path },
       json: true
     });
   } catch (e) {
