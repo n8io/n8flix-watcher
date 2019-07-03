@@ -1,0 +1,15 @@
+{
+  "name": "n8flix-watcher",
+  "version": "1.0.0",
+  "description": "Watch for file deletions in directories",
+  "main": "index.js",
+  "author": "Nate Clark <n8@n8io.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "chokidar": "^3.0.1",
+    "got": "^9.6.0"
+  }
+}
