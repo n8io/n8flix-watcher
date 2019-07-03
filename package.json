@@ -6,6 +6,7 @@
   "author": "Nate Clark <n8@n8io.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "DRY_RUN=1 HOST=localhost WATCH_DIR=\"./mnt/x/decrypted/**/*.(mkv|mp4|avi|n8)\" yarn start",
     "start": "node ."
   },
   "dependencies": {
