@@ -1,5 +1,6 @@
 const chokidar = require('chokidar');
 const got = require('got');
+const { log, start: rotateLogs } = require('./logs');
 
 const {
   DRY_RUN = '',
@@ -31,27 +32,13 @@ const sendPath = async tmpPath => {
   }
 };
 
-const log = msg => {
-  const options = {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    timeZone: 'America/New_York'
-  };
-
-  const dt = new Intl.DateTimeFormat('en-US', options).format(new Date());
-
-  console.log(`${dt}: ${msg}`);
-};
-
 // One-liner for current directory, ignores .dotfiles
 chokidar.watch(WATCH_DIR).on('unlink', path => {
   log(path);
   sendPath(path);
 });
+
+rotateLogs();
 
 log(`Paths will be posted to ${uri}`);
 log(`Watcher started for ${WATCH_DIR} ...`);

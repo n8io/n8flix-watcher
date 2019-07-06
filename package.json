@@ -7,10 +7,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "DRY_RUN=1 HOST=localhost WATCH_DIR=\"./mnt/x/decrypted/**/*.(mkv|mp4|avi|n8)\" yarn start",
-    "start": "node ."
+    "start": "node . | tee -a commands.log"
   },
   "dependencies": {
     "chokidar": "^3.0.1",
-    "got": "^9.6.0"
+    "got": "^9.6.0",
+    "ramda": "^0.26.1"
   }
 }
